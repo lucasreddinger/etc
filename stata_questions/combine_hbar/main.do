@@ -38,7 +38,7 @@ graph close
 
 ** This is exactly what I wish worked in the way I envision!
 graph hbar, over(a) over(b)
-graph save hbar_over_over.png, replace
+graph export hbar_over_over.png, replace
 graph close
 
 ** How can I put the bars for a and b side-by-side for each count?
