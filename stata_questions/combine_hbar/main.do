@@ -3,6 +3,8 @@
 // Lucas Reddinger <jlr@lucasreddinger.com>
 // 2021 May 12
 
+cd E:\lucas\projects_public_github_jlr\etc\stata_questions\combine_hbar
+
 cls
 clear
 set more off
@@ -31,4 +33,9 @@ rm b.gph
 ** combined version of the graph above?
 twoway (hist a, color(blue) fraction) (hist b, fraction), legend(label(1 "Count of a") label(2 "Count of b"))
 graph export twoway_hist.png, replace
+graph close
+
+** This is exactly what I wish worked in the way I envision!
+graph hbar, over(a) over(b)
+graph save hbar_over_over.png, replace
 graph close
