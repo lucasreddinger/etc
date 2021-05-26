@@ -1,0 +1,22 @@
+\documentclass{standalone}
+
+\usepackage{newtxtext}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\begin{document}
+
+  \tikzstyle{box} = [rectangle, draw, minimum height=6cm, text width=3cm, text centered, rounded corners]
+  \tikzstyle{line} = [draw, -latex']
+  
+  \begin{tikzpicture}[node distance = 6em, auto]
+    
+    \node [box] (box-a) {BOX A};
+    \node [box, right of=box-a, node distance=6cm] (box-b) {BOX-B};
+    
+    \path [line] ([yshift=+5cm] box-a) -- node [midway, above] {Path 1 Above} node [midway, below] {Path 1 Below} ([yshift=+5cm] box-b);
+    \path [line] ([yshift=-5cm] box-a) -- node [midway, above] {Path 2 Above} node [midway, below] {Path 2 Below} ([yshift=-5cm] box-b);
+    
+\end{tikzpicture}
+
+\end{document}
