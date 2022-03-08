@@ -1,9 +1,4 @@
-\documentclass[
-    letterpaper,oneside,paper=portrait,
-    usegeometry=true,fontsize=12pt,
-    headinclude=false,
-    DIV=10,version=last]
-{scrbook}
+\documentclass[letterpaper]{scrartcl}
 
 \usepackage{scrlayer-scrpage}
 \usepackage[tmargin=1in,bmargin=1in,footskip=.25in]{geometry}
@@ -13,10 +8,18 @@
 
 \begin{document}
 
-\Blindtext[3]
+\Blindtext[4]
+
+\clearpage
 
 \begin{spacing}{1.8}
-\Blindtext[3]
+
+\Blindtext[4]
+
 \end{spacing}
+
+\clearpage
+
+\Blindtext[4]
 
 \end{document}
