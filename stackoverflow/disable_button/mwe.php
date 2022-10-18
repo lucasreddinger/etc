@@ -19,8 +19,10 @@ $_SESSION['counter'] = isset($_SESSION['counter']) ? $_SESSION['counter']+1 : 0;
         <script>
 // this does not work
 // https://stackoverflow.com/questions/41693832/disable-a-link-after-click-using-jquery
-$('.btn').on('click', function(e) {
-    $(this).prop('disabled',true);
+$(document).ready(function(){
+    $('.btn').on('click', function(e) {
+        $(this).prop('disabled',true);
+    });
 });
         </script>
     </head>
