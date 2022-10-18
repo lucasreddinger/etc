@@ -33,7 +33,7 @@ $(document).ready(function(){
                 <p>The goal is to prevent multiple requests.</p>
                 <p>Double-clicking the button should make <b>one</b> request and increment the counter by one.</p>
                 <p><a class="btn btn-primary" href="mwe.php">Count!</a></p>
-                <p class="mb-0"><a href="mwe.php.txt">Source code</a></p>
+                <p class="mb-0"><a href="https://github.com/lucasreddinger/etc/tree/master/stackoverflow/disable_button">Source code</a></p>
             </div>
         </div>
     </body>
