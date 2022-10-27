@@ -17,18 +17,26 @@ $_SESSION['counter'] = isset($_SESSION['counter']) ? $_SESSION['counter']+1 : 0;
         <script src="jquery-3.6.1.min.js"></script>
         <script src="bootstrap.bundle.min.js"></script>
         <script>
-// solution proposed by don't panic
+// Solution proposed by Don't Panic
 // https://stackoverflow.com/a/74105542/9464666
-$('.btn').on('click', function(e) {
-    // The default action for a button is to submit - you don't
-    // want to do that, so you do need to prevent it
-    e.preventDefault();
+$( document ).ready(function() {
+    $('.btn').on('click', function(e) {
+        // [Don't Panic]
+        // The default action for a button is to submit - you don't
+        // want to do that, so you do need to prevent it
+        //
+        // [RESPONSE FROM OP]
+        // Yes, I do want to do that.
+        // Please re-read my question or the text below.
+        // It should make one request.
+        e.preventDefault();
 
-    // Disable button
-    $(this).attr('disabled', 'disabled');
+        // Disable button
+        $(this).attr('disabled', 'disabled');
 
-    // Some visual indicator so we can see what is happening
-    console.log('click!');
+        // Some visual indicator so we can see what is happening
+        console.log('click!');
+    });
 });
         </script>
     </head>

@@ -18,7 +18,7 @@ $_SESSION['counter'] = isset($_SESSION['counter']) ? $_SESSION['counter']+1 : 0;
         <script src="bootstrap.bundle.min.js"></script>
         <script>
 // https://stackoverflow.com/a/2545795/9464666
-(function () {
+$(document).ready(function(){
     var allowSubmit = true;
     $('form').onsubmit = function () {
        if (allowSubmit)
@@ -26,7 +26,7 @@ $_SESSION['counter'] = isset($_SESSION['counter']) ? $_SESSION['counter']+1 : 0;
        else
            return false;
     }
-})();
+});
         </script>
     </head>
     <body>

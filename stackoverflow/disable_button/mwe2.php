@@ -17,7 +17,7 @@ $_SESSION['counter'] = isset($_SESSION['counter']) ? $_SESSION['counter']+1 : 0;
         <script src="jquery-3.6.1.min.js"></script>
         <script src="bootstrap.bundle.min.js"></script>
         <script>
-// this does not work
+// This does not disable the button after the first click and page request.
 // https://stackoverflow.com/questions/41693832/disable-a-link-after-click-using-jquery
 $(document).ready(function(){
     $('.btn').on('click', function(e) {
