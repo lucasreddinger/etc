@@ -34,6 +34,7 @@ histogram rep78, discrete xlabel(2(1)5)
 ```
 * xscale cannot tighten the lower bound either.
 histogram rep78, discrete xlabel(2(1)5) xscale(range(1 5))
+```
 ![](04.png?raw=true)
 ```
 * but it's not because histogram wants to include zero.
