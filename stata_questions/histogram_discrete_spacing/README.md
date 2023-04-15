@@ -51,6 +51,7 @@ histogram foreign, discrete xlabel(0 1, valuelabel) xscale(range(0 1))
 ```
 * avoiding the discrete option produces the same figure
 histogram foreign, w(1) start(-0.5) xlabel(0 1, valuelabel) xscale(range(-0.5 1.5))
+```
 ![](07.png?raw=true)
 
 ```
