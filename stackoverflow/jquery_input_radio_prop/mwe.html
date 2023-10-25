@@ -5,34 +5,48 @@
         <script src="import/jquery-3.6.1.min.js"></script>
         <script src="import/jquery-ui.min.js"></script>
         <script>
-            var row_max = 3;
 
-            $(document).ready(function(){
+//#### Parameters
 
-//              the next line is what causes the problem!
-                $('input[type=radio]').checkboxradio({icon: false});
+var row_max = 3;
 
-                function mpl_update( event ){
-                    for (var j = 0; j <= row_max; j++) {
-                        if (event.data.side == 'a' && event.data.row > j) {
-                            console.log( "Attempting to check side a, row " + j + ". Selector is:");
-                            console.log( $('#radio-'+j+'-a') );
-                            $('#radio-'+j+'-a').prop('checked', true);
-                        };
-                        if (event.data.side == 'a' && event.data.row < j) {
-                            console.log( "Attempting to uncheck side a, row " + j + ". Selector is:");
-                            console.log( $('#radio-'+j+'-a') );
-                            $('#radio-'+j+'-a').prop('checked', false);
-                        };
-                    };
-                };
 
-                for (var i = 0; i <= row_max; i++) {
-                    $('#radio-'+i+'-a').on('click', { side: 'a', row: i }, mpl_update);
-                    $('#radio-'+i+'-b').on('click', { side: 'b', row: i }, mpl_update);
-                };
+//#### On ready
+$(document).ready(function(){
 
-            });
+//## Load UI elements
+
+/* the next line is what causes the problem!
+   if i remove this line, there is no issue,
+   but i lose the jQuery UI design. i would
+   like to keep it because i use it elsewhere. */
+$('input[type=radio]').checkboxradio({icon: false});
+
+//## Event handling
+
+function mpl_update( event ){
+  for (var j = 0; j <= row_max; j++) {
+    if (event.data.side == 'a' && event.data.row > j) {
+      console.log( "Attempting to check side a, row " + j + ". Selector is:");
+      console.log( $('#radio-'+j+'-a') );
+      $('#radio-'+j+'-a').prop('checked', true);
+    };
+
+    if (event.data.side == 'a' && event.data.row < j) {
+      console.log( "Attempting to uncheck side a, row " + j + ". Selector is:");
+      console.log( $('#radio-'+j+'-a') );
+      $('#radio-'+j+'-a').prop('checked', false);
+    };
+  };
+};
+
+for (var i = 0; i <= row_max; i++) {
+  $('#radio-'+i+'-a').on('click', { side: 'a', row: i }, mpl_update);
+  $('#radio-'+i+'-b').on('click', { side: 'b', row: i }, mpl_update);
+};
+
+
+});
 
         </script>
     </head>
