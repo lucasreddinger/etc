@@ -1,0 +1,26 @@
+Delivery has failed to these recipients or groups:
+reddinjl@purdue.edu
+Your message can't be sent because you've reached your 24 hour limit for message recipients. Please try again later. Contact your email admin for assistance. See this link for more information on this NDR.
+
+
+
+
+
+
+
+
+
+Diagnostic information for administrators:
+Generating server: PH0PR22MB2875.namprd22.prod.outlook.com
+
+reddinjl@purdue.edu
+Remote server returned '550 5.1.90 Your message can't be sent because you've reached your daily limit for message recipients. Please try again later. Contact your email admin for assistance. (AS:46601)'
+
+Original message headers:
+Received: from PH0PR22MB2875.namprd22.prod.outlook.com
+ ([fe80::962b:ad93:d414:9d4e]) by PH0PR22MB2875.namprd22.prod.outlook.com
+ ([fe80::962b:ad93:d414:9d4e%7]) with mapi id 15.20.6933.024; Fri, 27 Oct 2023
+ 22:19:46 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+Date: Fri, 27 Oct 2023 22:19:46 +0000
