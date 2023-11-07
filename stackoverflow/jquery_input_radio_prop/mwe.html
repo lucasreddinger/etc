@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="import/jquery-ui.min.css" type="text/css" />
+        <script src="import/jquery-3.6.1.min.js"></script>
+        <script src="import/jquery-ui.min.js"></script>
+        <script>
+
+//#### Parameters
+
+var row_max = 3;
+
+
+//#### On ready
+$(document).ready(function(){
+
+//## Load UI elements
+
+/* the next line is what causes the problem!
+   if i remove this line, there is no issue,
+   but i lose the jQuery UI design. i would
+   like to keep it because i use it elsewhere. */
+$('input[type=radio]').checkboxradio({icon: false});
+
+//## Event handling
+
+function mpl_update( event ){
+  for (var j = 0; j <= row_max; j++) {
+    if (event.data.side == 'a' && event.data.row > j) {
+      console.log( "Attempting to check side a, row " + j + ". Selector is:");
+      console.log( $('#radio-'+j+'-a') );
+      $('#radio-'+j+'-a').prop('checked', true);
+    };
+
+    if (event.data.side == 'a' && event.data.row < j) {
+      console.log( "Attempting to uncheck side a, row " + j + ". Selector is:");
+      console.log( $('#radio-'+j+'-a') );
+      $('#radio-'+j+'-a').prop('checked', false);
+    };
+  };
+};
+
+for (var i = 0; i <= row_max; i++) {
+  $('#radio-'+i+'-a').on('click', { side: 'a', row: i }, mpl_update);
+  $('#radio-'+i+'-b').on('click', { side: 'b', row: i }, mpl_update);
+};
+
+
+});
+
+        </script>
+    </head>
+    <body>
+        <p>Open the console and click the buttons containing "a".</p>
+        <fieldset>
+            <label for="radio-0-a">0 a</label>
+            <input type="radio" name="radio-0" id="radio-0-a" value="0">
+            <label for="radio-0-b">0 b</label>
+            <input type="radio" name="radio-0" id="radio-0-b" value="1">
+        </fieldset>
+        <fieldset>
+            <label for="radio-1-a">1 a</label>
+            <input type="radio" name="radio-1" id="radio-1-a" value="0">
+            <label for="radio-1-b">1 b</label>
+            <input type="radio" name="radio-1" id="radio-1-b" value="1">
+        </fieldset>
+        <fieldset>
+            <label for="radio-2-a">2 a</label>
+            <input type="radio" name="radio-9" id="radio-2-a" value="0">
+            <label for="radio-2-b">2 b</label>
+            <input type="radio" name="radio-9" id="radio-2-b" value="1">
+        </fieldset>
+        <fieldset>
+            <label for="radio-3-a">3 a</label>
+            <input type="radio" name="radio-3" id="radio-3-a" value="0">
+            <label for="radio-3-b">3 b</label>
+            <input type="radio" name="radio-3" id="radio-3-b" value="1">
+        </fieldset>
+    </body>
+</html>
+
+
