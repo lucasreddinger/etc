@@ -18,7 +18,8 @@ generate str v3 = regexs(1) + "--" + regexs(2) if regexm(v2, "(.*)\R+(.*)")
 chartab v3
 list
 
-* use \r to match mac- and msdos-style; it does not match unix-style line breaks
+* use \r to match legacy-mac- and msdos-style;
+* it does not match unix-style (including modern mac os) line breaks
 generate str v4 = regexs(1) + "--" + regexs(2) if regexm(v2, "(.*)\r+(.*)")
 chartab v4
 list
