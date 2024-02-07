@@ -7,11 +7,6 @@
             $(document).ready(function(){
 
                 var waittime=2;
-                var blocksubmit=true;
-
-                $('form').submit(function (evt) {
-                    if (blocksubmit) evt.preventDefault();
-                });
 
                 $("input[name='choice']").click(function(me){
                     theval = this.value;
@@ -19,7 +14,6 @@
                 
                     setTimeout(
                         function () {
-                            blocksubmit=false;
                             $('form').first().trigger('submit');
                             $('#msg').html('The URL should now display ?'+theval+' at its end.');
                         },
