@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="import/bootstrap.min.css" type="text/css" />
+        <script src="import/jquery-3.6.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                var waittime=2;
+                var blocksubmit=true;
+
+                $('form').submit(function (evt) {
+                    if (blocksubmit) evt.preventDefault();
+                });
+
+                $("input[name='choice']").click(function(me){
+                    theval = this.value;
+                    $('#msg').html('Submitting "'+theval+'" in '+waittime+' seconds.');
+                
+                    setTimeout(
+                        function () {
+                            blocksubmit=false;
+                            $('form').first().trigger('submit');
+                            $('#msg').html('The URL should now display ?'+theval+' at its end.');
+                        },
+                        1000*waittime
+                    );
+
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form action="?" method="get">
+            <p id="msg">Choose one:</p>
+            <input type="radio" class="btn-check" name="choice" value="True" id="inputTrue" autocomplete="off">
+            <label class="btn btn-secondary" for="inputTrue">True</label>
+            <input type="radio" class="btn-check" name="choice" value="False" id="inputFalse" autocomplete="off">
+            <label class="btn btn-secondary" for="inputFalse">False</label>
+        </form>
+        <p>Expected behavior: Two seconds after clicking a button, the browser loads `?choice=True` or `?choice=False`.</p> 
+        <p>Actual behavior: Two seconds after clicking a button, the browser loads `?`. The input value is not included.</p> 
+    </body>
+</html>
