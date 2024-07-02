@@ -1,0 +1,19 @@
+\documentclass[fontsize=12pt,DIV=8,letterpaper,oneside]{scrartcl}
+\usepackage[backend=biber,natbib,authordate]{biblatex-chicago}
+\usepackage{standalone}
+\newif\ifstandlone \standalonetrue
+
+\addbibresource{bib.bib}
+
+\begin{document}
+
+\section{My first section}
+
+Blah blah blah. \citet{CharnessDufwenberg2006}. Something.
+
+\ifstandalone
+\printbibliography
+\fi
+
+\end{document}
+
