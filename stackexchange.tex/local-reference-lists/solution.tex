@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage{mwe}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+
+\newcommand{\listofcatpics}{Pictures of cats}
+\newlistof{figure}{aabbcc}{\listofcatpics}
+\newcommand{\cat}[1]{%
+\refstepcounter{figure}
+\par\noindent\textbf{Figure \thefigure. #1}
+\addcontentsline{figure}{\thefigure}
+\caption{\thefigure #1}\par}
+
+
+\begin{document}
+
+I want the lists of figures and tables all on the first page. I then want the tables and figures themselves on subsequent pages.
+
+The local list of tables will only work if I clearpage after the tables.
+
+Is there a way to build custom lists of tables or figures by specifying which tables and figures I want included in each list?
+
+\section{Additional results}
+
+\begin{table}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Results I]{A first table.}
+\end{table}
+
+\begin{table}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Results II]{A second table.}
+\end{table}
+
+% \clearpage %%%% Required to show the list of tables
+
+\section{Pictures of cats}
+
+\listofcatpics
+
+\begin{figure}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\cat{AAA}
+\end{figure}
+
+\begin{figure}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\cat{BBB}
+\end{figure}
+
+\end{document}

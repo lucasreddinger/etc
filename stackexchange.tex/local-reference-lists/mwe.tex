@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{mwe}
+\usepackage{hyperref}
+\usepackage[lof,lot]{etoc}
+
+\begin{document}
+
+I want the lists of figures and tables all on the first page. I then want the tables and figures themselves on subsequent pages.
+
+The local list of tables will only work if I clearpage after the tables.
+
+Is there a way to build custom lists of tables or figures by specifying which tables and figures I want included in each list?
+
+\section{Additional results}
+
+\locallistoftables
+
+\begin{table}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Results I]{A first table.}
+\end{table}
+
+\begin{table}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Results II]{A second table.}
+\end{table}
+
+% \clearpage %%%% Required to show the list of tables
+
+\section{Pictures of cats}
+
+\locallistoffigures
+
+\begin{figure}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Cat]{A fat cat.}
+\end{figure}
+
+\begin{figure}[p]
+\centering\includegraphics[width=0.8\textwidth]{example-image-10x16}
+\caption[Kitty]{A pretty kitty.}
+\end{figure}
+
+\end{document}
