@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{footmisc}
+
+\textheight=8\baselineskip
+\setlength{\pdfpageheight}{5in}
+
+\newcounter{savefootnote}
+\newcounter{symfootnote}
+\newcommand{\symfootnote}[1]{%
+   \setcounter{savefootnote}{\value{footnote}}%
+   \setcounter{footnote}{\value{symfootnote}}%
+   \ifnum\value{footnote}>8\setcounter{footnote}{0}\fi%
+   \let\oldthefootnote=\thefootnote%
+   \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+   \footnote{#1}%
+   \let\thefootnote=\oldthefootnote%
+   \setcounter{symfootnote}{\value{footnote}}%
+   \setcounter{footnote}{\value{savefootnote}}%
+}
+
+\makeatletter
+  \renewcommand\@makefnmark{%
+    \hbox{%
+      \ifx\@fnsymbol\FN@fnsymbol@sym
+        \expandafter\@firstofone
+      \else
+        \expandafter\@textsuperscript
+      \fi
+      {\normalfont\@thefnmark}%
+    }%
+  }
+\makeatother
+
+\begin{document}
+
+I seek concurrent symbolic and arabic-numeral footnotes that follow the \emph{Chicago Manual of Style} 14.24.
+
+A symbolic footnote should be superscript as the in-text reference.\symfootnote{But the symbol at the beginning of the note itself should \emph{not} be superscript and not followed by a period.} Arabic-numeral footnotes should also be superscript as the in-text reference.\footnote{The numeral should not be superscript at the beginning of the note, which should also be followed by a period.}
+
+\end{document}
+
