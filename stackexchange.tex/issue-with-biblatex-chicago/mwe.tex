@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[backend=biber,natbib,authordate]{biblatex-chicago}
+\usepackage[backend=biber,authordate]{biblatex-chicago}
 
 \begin{filecontents}{bib.bib}
 @Article{CharnessDufwenberg2006,
@@ -26,13 +26,13 @@
 
 \begin{document}
 
-Blah blah blah \citep{CharnessDufwenberg2006}.
+Blah blah blah \parencite{CharnessDufwenberg2006}.
 
-Let's see if this works \citep[\textit{c.f.},][]{CharnessDufwenberg2006}.
+Let's see if this works \parencite[\textit{c.f.},][]{CharnessDufwenberg2006}.
 
-It didn't work! Let's cite something else first \citep{BeattieLoomes1997}.
+It didn't work! Let's cite something else first \parencite{BeattieLoomes1997}.
 
-Now let's try again \citep[\textit{c.f.},][]{CharnessDufwenberg2006}.
+Now let's try again \parencite[\textit{c.f.},][]{CharnessDufwenberg2006}.
 
 I guess one cannot cite the same thing twice in a row. The \emph{Chicago Manual of Style FAQ} says you should do this as appropriate.\footnote{https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Documentation/faq0010.html}
 
