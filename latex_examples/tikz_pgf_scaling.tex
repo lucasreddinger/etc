@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+
+\begin{document}
+
+% baseline (no scaling)
+\begin{tikzpicture}
+  \begin{axis}
+    \addplot {x};
+  \end{axis}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+% tikzpicture scale = 2
+\begin{tikzpicture}[scale=2]
+  \begin{axis}
+    \addplot {x};
+  \end{axis}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+% axis scale = 2
+\begin{tikzpicture}
+  \begin{axis}[scale=2]
+    \addplot {x};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
